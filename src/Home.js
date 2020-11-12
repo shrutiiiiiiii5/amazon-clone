@@ -1,5 +1,6 @@
 import React from "react";
 import "./Home.css";
+import Product from "./Product";
 
 function Home() {
   return (
@@ -7,9 +8,51 @@ function Home() {
       <div className="home__container">
         <img
           className="home__image"
-          src="data:image/jpeg;base64,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"
+          src="https://i.gadgets360cdn.com/large/amazon_best_tv_march_2020_1585384758649.jpg"
           alt=""
         />
+        <div className="home__row">
+          <Product
+            title="The lean startup"
+            price={29.99}
+            image="https://artofthekickstart.com/wp-content/uploads/2016/06/lean-startup.jpg"
+            rating={5}
+          />
+          <Product
+            title="The lean startup"
+            price={29.99}
+            image="https://artofthekickstart.com/wp-content/uploads/2016/06/lean-startup.jpg"
+            rating={5}
+          />
+        </div>
+        <div className="home__row">
+          <Product
+            title="The lean startup"
+            price={29.99}
+            image="https://artofthekickstart.com/wp-content/uploads/2016/06/lean-startup.jpg"
+            rating={5}
+          />{" "}
+          <Product
+            title="The lean startup"
+            price={29.99}
+            image="https://artofthekickstart.com/wp-content/uploads/2016/06/lean-startup.jpg"
+            rating={5}
+          />{" "}
+          <Product
+            title="The lean startup"
+            price={29.99}
+            image="https://artofthekickstart.com/wp-content/uploads/2016/06/lean-startup.jpg"
+            rating={5}
+          />
+        </div>
+        <div className="home__row">
+          <Product
+            title="The lean startup"
+            price={29.99}
+            image="https://artofthekickstart.com/wp-content/uploads/2016/06/lean-startup.jpg"
+            rating={5}
+          />
+        </div>
       </div>
     </div>
   );
